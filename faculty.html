@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Page</title>
+    <style>
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            background-image: linear-gradient(rgba(238, 240, 247, 0.7),rgba(10, 17, 58, 0.7)) ;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            background: #57565e;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            padding: 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+        h1 {
+            color: #333;
+        }
+        /* HOD Card Styling */
+        .hod-card {
+            background: #a39c9e;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            text-align: center;
+            width: 320px;
+            margin: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hod-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        .hod-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        /* Faculty Card Styling */
+        .faculty-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .faculty-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .faculty-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .faculty-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            text-align: left;
+            position: relative;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="file:///C:/Users/Dell/Desktop/department/index.html">HOME</a></li>
+            <li><a href="about1.html">ABOUT</a></li>
+            <li><a href="syllabus.html">SYLLABUS</a></li>
+            <li><a href="faculty.html">FACULTY</a></li>
+            <li><a href="placements.html">PLACEMENTS</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="contactus1.html">CONTACT US</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Our Faculty</h1>
+        <div class="hod-card" onclick="openModal(' Dr.T.Sudhir', 'Professor & HOD', 'Ph.D', 'Artificial Intelligence', 'sudhir@vvit.com', '9876543210')">
+            <img src="staff/cse-tsudhir.jpg" alt="Dr.T.Sudhir">
+            <h3>Dr.T.Sudhir</h3>
+            <p>Professor & HOD</p>
+        </div>
+        <div class="faculty-container">
+            <div class="faculty-card" onclick="openModal('Dr.Sangu Ravindra', 'Associate Professor', 'Ph.D', ' ArtificialIntelligence & DataScience', 'ravindra@vvit.com', '9876543211')">
+                <img src="staff/ravindra.jpg" alt="Dr.Ravindra">
+                <h3>Dr.Sangu Ravindra</h3>
+                <p>Associate Professor</p>
+            </div>
+            <div class="faculty-card" onclick="openModal('Dr.K.Satheesh', 'Associate Professor', 'Ph.D', 'ArtificialIntelligence & DataScience', 'satheesh@vvit.com', '9876543212')">
+                <img src="staff/Dr Kavuri Satheesh.jpg" alt="Dr.K.Satheesh">
+                <h3>Dr.K.Satheesh</h3>
+                <p>Associate Professor</p>
+            </div>
+            <div class="faculty-card" onclick="openModal('Dr.K.Parisudha babu', 'Assistant Professor', 'M.tech', 'ArtificialIntelligence & dataScience', 'paribabu@vvit.com', '9876543213')">
+                <img src="staff/K Pari babu.jpg" alt="Dr.K.Paribabu">
+                <h3>Dr.K.Parisudha babu</h3>
+                <p>Assistant Professor</p>
+            </div>
+            <div class="faculty-card" onclick="openModal('Dr.K.LohithaLakshmi', 'Associate Professor', 'Ph.D', ' ArtificialIntelligence & dataScience', 'lohitha@vvit.com', '9876543214')">
+                <img src="staff/LOHITHA PHOTO UPDATED1.jpg" alt="Dr.K.LohithaLakshmi">
+                <h3>Dr.K.LohithaLakshmi</h3>
+                <p>Associate Professor</p>
+            </div>
+            <div class="faculty-card" onclick="openModal('V.Mounica', 'Assistant Professor', 'M.Tech', 'Artificial Intelligence & Datascience', 'mounica@vvit.com', '9876543215')">
+                <img src="staff/Vanapalli Mounica.jpeg" alt="V.Mounica">
+                <h3>V.Mounica</h3>
+                <p>Assistant Professor</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for Faculty Details -->
+     <!-- Modal for Faculty Details -->
+<div id="facultyModal" class="modal">
+  <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2> <!-- Corrected Title -->
+      <p><strong>Name:</strong> <span id="facultyName"></span></p>
+      <p><strong>Designation:</strong> <span id="facultyDesignation"></span></p>
+      <p><strong>Qualification:</strong> <span id="facultyQualification"></span></p>
+      <p><strong>Department:</strong> <span id="facultyDepartment"></span></p>
+      <p><strong>Email:</strong> <span id="facultyEmail"></span></p>
+      <p><strong>Phone Number:</strong> <span id="facultyPhone"></span></p>
+  </div>
+</div>
+
+<script>
+  function openModal(name, designation, qualification, department, email, phone) {
+      document.getElementById("modalTitle").innerText = name; // Set the title separately
+      document.getElementById("facultyName").innerText = name; 
+      document.getElementById("facultyDesignation").innerText = designation;
+      document.getElementById("facultyQualification").innerText = qualification;
+      document.getElementById("facultyDepartment").innerText = department;
+      document.getElementById("facultyEmail").innerText = email;
+      document.getElementById("facultyPhone").innerText = phone;
+      document.getElementById("facultyModal").style.display = "flex";
+  }
+
+  function closeModal() {
+      document.getElementById("facultyModal").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
